@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --title-font: "Poppins", sans-serif;
+  --body-font: verdana, sans-serif;
+  --font-size: 1rem;
+  --primary-color: black;
+  --bg-button: #7e7e7e;
+  --secondary-color: white;
+  --button-radius: 4px;
+}
+
+body {
+  padding: 1rem;
+  font-size: var(--font-size);
+  line-height: 1.7;
+  font-family: var(--body-font);
+
+  a {
+    text-decoration: none;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--title-font);
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  body {
+    padding: 1.5rem 5rem;
+  }
+  .all-element {
+    background-image: none;
+  }
+}
