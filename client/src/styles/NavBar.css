@@ -16,7 +16,7 @@ nav {
 }
 
 .link-signup {
-  background-color: var(--bg-button);
+  background-color: #575aef;
   color: var(--secondary-color);
   padding: 0.5rem;
   border-radius: var(--button-radius);

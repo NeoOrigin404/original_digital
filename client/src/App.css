@@ -22,23 +22,21 @@ body {
 
   a {
     text-decoration: none;
+    cursor: pointer;
   }
   ul,
   ol {
     list-style: none;
+    cursor: pointer;
   }
   h1,
   h2,
   h3 {
     font-family: var(--title-font);
   }
-}
 
-@media only screen and (min-width: 1920px) {
-  body {
-    padding: 1.5rem 5rem;
-  }
-  .all-element {
-    background-image: none;
+  main {
+    margin: 0 auto;
+    max-width: 1440px;
   }
 }
