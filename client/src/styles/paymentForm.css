@@ -14,11 +14,11 @@
     color: white;
   }
   .button-cancel-submit > button:first-child {
-    padding: 1rem 2rem;
-    background-color: grey;
+    padding: 1rem 4rem;
+    background-color: #575aef;
   }
   .button-cancel-submit > button:last-child {
-    padding: 1rem 4rem;
-    background-color: black;
+    padding: 1rem 2rem;
+    background-color: grey;
   }
 }

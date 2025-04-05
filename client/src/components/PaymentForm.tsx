@@ -137,10 +137,10 @@ export default function PaymentForm() {
           ))}
         </datalist>
         <div className="button-cancel-submit">
+          <button type="submit">Payer</button>
           <button type="button" onClick={cancelPayment}>
             Annuler
           </button>
-          <button type="submit">Payer</button>
         </div>
         <ToastContainer
           position="top-right"
