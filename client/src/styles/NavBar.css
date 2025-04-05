@@ -8,7 +8,7 @@ nav {
   padding: 10px 20px;
   button {
     border: none;
-    background-color: var(--bg-button);
+    background-color: #575aef;
     color: var(--secondary-color);
     padding: 0.5rem;
     border-radius: var(--button-radius);
@@ -41,13 +41,10 @@ nav {
   display: none;
 }
 
-.disconnect-button {
-  cursor: pointer;
-}
-
 .disconnect-button-mobile {
   visibility: hidden;
 }
+
 @media only screen and (max-width: 792px) {
   .menu-container {
     display: flex;

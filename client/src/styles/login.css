@@ -18,8 +18,9 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    padding: 1rem;
   }
   .login-input:hover {
-    background-color: var(--primary-color);
+    background-color: #575aef;
   }
 }
