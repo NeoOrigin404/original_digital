@@ -26,7 +26,7 @@ export default function HomePage() {
           ))}
         </section>
       </section>
-      <section className="middle-element">
+      <section id="acces" className="middle-element">
         <h2>Nos différentes souscriptions</h2>
         <div className="offer">
           <button

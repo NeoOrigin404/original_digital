@@ -1,5 +1,6 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import MovieCards from "../components/MovieCards";
+import { useState } from "react";
 import "../styles/catalogue.css";
 import { useAuth } from "../services/AuthContext";
 
@@ -8,7 +9,14 @@ export default function Catalogue() {
     movies: MovieType[];
   };
 
+  const navigate = useNavigate();
+  const handlePaymentPage = () => {
+    navigate("/payment");
+  };
+
   const { subscription } = useAuth();
+
+  const [selectedOffer, setSelectedOffer] = useState("free");
 
   const freeMovies = movies.filter((movie) => !movie.premium);
   const premiumMovies = movies.filter((movie) => movie.premium);
@@ -70,30 +78,48 @@ export default function Catalogue() {
         </section>
       </div>
       {!subscription && (
-        <section id="acces" className="connection-bottom">
+        <section id="acces" className="middle-element">
           <h2>Nos différentes souscriptions</h2>
-          <div className="bottom-container">
-            <div className="bottom-left">
-              <h3>Offre Gratuite</h3>
-              <p>Visionnez 4 films par mois</p>
-              <p className="bottom-free">Accédez à notre catalogue complet</p>
-              <p className="bottom-free">Regardez en haute qualité</p>
-              <p className="bottom-free">Gérez vos listes de films à voir</p>
-            </div>
-
-            <div className="bottom-right">
-              <h3>Offre Premium</h3>
-              <p>Films illimités en haute qualité</p>
-              <p>Accédez à notre catalogue complet</p>
-              <p>Regardez en haute qualité</p>
-              <p>Gérez vos listes de films à voir</p>
-            </div>
+          <div className="offer">
+            <button
+              type="button"
+              className={`button ${selectedOffer === "free" ? "active" : "inactive"}`}
+              onClick={() => setSelectedOffer("free")}
+            >
+              Gratuit
+            </button>
+            <button
+              type="button"
+              className={`button ${selectedOffer === "premium" ? "active" : "inactive"}`}
+              onClick={() => setSelectedOffer("premium")}
+            >
+              Premium
+            </button>
           </div>
-          <Link to="/payment">
-            <button type="button" className="button-premium">
+          <div className="content">
+            {selectedOffer === "free" ? (
+              <div className="free">
+                <p>Visionnez 4 films gratuits</p>
+                <p className="disabled">Accédez à notre catalogue complet</p>
+                <p className="disabled">Regardez en haute qualité</p>
+                <p className="disabled">Gérez vos listes de films à voir</p>
+              </div>
+            ) : (
+              <div className="premium">
+                <p>Films illimités en haute qualité</p>
+                <p>Accédez à notre catalogue complet</p>
+                <p>Regardez en haute qualité</p>
+                <p>Gérez vos listes de films à voir</p>
+              </div>
+            )}
+            <button
+              type="button"
+              className="button-middle"
+              onClick={handlePaymentPage}
+            >
               Devenir Premium
             </button>
-          </Link>
+          </div>
         </section>
       )}
     </>
