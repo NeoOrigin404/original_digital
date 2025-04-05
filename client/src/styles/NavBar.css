@@ -2,10 +2,15 @@
   height: 4rem;
 }
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
+  max-width: 1440px;
   button {
     border: none;
     background-color: #575aef;
@@ -34,6 +39,9 @@ nav {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: bold;
+  &:hover {
+    color: #575aef;
+  }
 }
 
 .menu-icon {

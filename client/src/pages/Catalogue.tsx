@@ -16,6 +16,15 @@ export default function Catalogue() {
     movie.genres.includes("Science-fiction"),
   );
 
+  const handleScroll = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const targetElement = document.querySelector("#acces");
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <>
       <div className="first-container">
@@ -25,8 +34,12 @@ export default function Catalogue() {
           alt="Combat entre Hulk rouge et Captain America"
         />
         {!subscription && (
-          <button type="button" className="premium-offer">
-            <a href="#acces">Découvrir nos offres</a>
+          <button
+            type="button"
+            className="premium-offer"
+            onClick={handleScroll}
+          >
+            Découvrir nos offres
           </button>
         )}
       </div>

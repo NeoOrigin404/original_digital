@@ -59,6 +59,7 @@
   overflow-x: scroll;
   scrollbar-color: #76767639 transparent;
   scrollbar-width: thin;
+  scroll-behavior: smooth;
   gap: 1rem;
   margin: 1rem 0;
   min-height: auto;

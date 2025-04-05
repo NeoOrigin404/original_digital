@@ -9,6 +9,7 @@
 .premium-offer {
   border: none;
   background-color: #575aef;
+  color: white;
   padding: 1rem 3rem;
   border-radius: var(--button-radius);
   text-align: center;
@@ -19,9 +20,6 @@
   transform: translateY(-10rem);
   &:hover {
     background-color: #3b3eee;
-  }
-  a {
-    color: white;
   }
 }
 
