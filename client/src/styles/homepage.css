@@ -145,7 +145,6 @@ section > h2 {
     font-weight: 600;
   }
 
-  /* Boutons de sélection d'offre */
   .offer {
     display: flex;
     justify-content: center;
@@ -182,7 +181,6 @@ section > h2 {
     background-color: #d6d6d6;
   }
 
-  /* Contenu des offres */
   .content {
     display: flex;
     flex-direction: column;

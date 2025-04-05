@@ -10,7 +10,9 @@ nav {
     border: none;
     background-color: #575aef;
     color: var(--secondary-color);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.8rem;
     border-radius: var(--button-radius);
   }
 }
@@ -18,7 +20,7 @@ nav {
 .link-signup {
   background-color: #575aef;
   color: var(--secondary-color);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--button-radius);
 }
 

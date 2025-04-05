@@ -22,10 +22,10 @@ export default function Catalogue() {
         <img
           src="/Background_connection.jpg"
           className="img-container"
-          alt=""
+          alt="Combat entre Hulk rouge et Captain America"
         />
         {!subscription && (
-          <button type="button" className="decouvrir-nos-offres">
+          <button type="button" className="premium-offer">
             <a href="#acces">Découvrir nos offres</a>
           </button>
         )}

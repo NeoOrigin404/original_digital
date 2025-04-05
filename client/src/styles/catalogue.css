@@ -1,28 +1,28 @@
-.movie-container::after {
-  background-color: rgb(161, 161, 161);
-
-  display: block;
-  height: 1px;
-  width: 90%;
-  content: "";
-  transform: translateY(15rem);
-}
-
 .movie-container:last-of-type::after {
   display: none;
 }
 
-.decouvrir-nos-offres {
+.movie-title {
+  max-width: 124px;
+}
+
+.premium-offer {
   border: none;
-  background-color: black;
-  color: var(--secondary-color);
-  padding: 0.5rem;
-  width: 10rem;
+  background-color: #575aef;
+  padding: 1rem 3rem;
   border-radius: var(--button-radius);
   text-align: center;
   display: flex;
   justify-content: center;
-  transform: translateY(-7rem);
+  font-weight: 700;
+  font-size: 1rem;
+  transform: translateY(-10rem);
+  &:hover {
+    background-color: #3b3eee;
+  }
+  a {
+    color: white;
+  }
 }
 
 .first-container {
@@ -30,12 +30,6 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  button {
-    margin-top: 2rem;
-  }
-  a {
-    color: var(--secondary-color);
-  }
 }
 
 .first-container svg {
