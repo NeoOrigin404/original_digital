@@ -12,6 +12,9 @@ footer {
   a {
     color: black;
     opacity: 0.8;
+    &:hover {
+      color: #ff8dc0;
+    }
   }
   div:nth-child(3) {
     margin-top: 1rem;

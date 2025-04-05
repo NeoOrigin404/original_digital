@@ -156,12 +156,28 @@ export default function SignupForm() {
               onChange={handleChangeForm}
               placeholder="Votre mot de passe"
             />
-            <button type="button" onClick={togglePassword}>
-              <SvgIcons
-                path={showIconPassword.path}
-                height={showIconPassword.height}
-                width={showIconPassword.width}
-              />
+            <button
+              type="button"
+              onClick={togglePassword}
+              className="password-toggle-button"
+              aria-label={
+                showPassword
+                  ? "Masquer le mot de passe"
+                  : "Afficher le mot de passe"
+              }
+            >
+              <div className="tooltip-container">
+                <SvgIcons
+                  path={showIconPassword.path}
+                  height={showIconPassword.height}
+                  width={showIconPassword.width}
+                />
+                <span className="tooltip">
+                  {showPassword
+                    ? "Masquer le mot de passe"
+                    : "Afficher le mot de passe"}
+                </span>
+              </div>
             </button>
           </div>
           <div className="password-input">
@@ -176,12 +192,28 @@ export default function SignupForm() {
               onChange={handleChangeForm}
               placeholder="Confirmez votre mot de passe"
             />
-            <button type="button" onClick={toggleConfirmPassword}>
-              <SvgIcons
-                path={showIconConfirmPassword.path}
-                height={showIconConfirmPassword.height}
-                width={showIconConfirmPassword.width}
-              />
+            <button
+              type="button"
+              onClick={toggleConfirmPassword}
+              className="password-toggle-button"
+              aria-label={
+                showPassword
+                  ? "Masquer le mot de passe"
+                  : "Afficher le mot de passe"
+              }
+            >
+              <div className="tooltip-container">
+                <SvgIcons
+                  path={showIconConfirmPassword.path}
+                  height={showIconConfirmPassword.height}
+                  width={showIconConfirmPassword.width}
+                />
+                <span className="tooltip">
+                  {showPassword
+                    ? "Masquer le mot de passe"
+                    : "Afficher le mot de passe"}
+                </span>
+              </div>
             </button>
           </div>
           <label htmlFor="checkbox" className="checkbox">
