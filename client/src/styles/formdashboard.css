@@ -8,7 +8,7 @@
   margin: 0 auto;
   margin-top: 0.5rem;
   padding: 0.5rem;
-  background-color: var(--bg-button);
+  background-color: #575aef;
   border: none;
   color: var(--secondary-color);
   border-radius: var(--button-radius);
