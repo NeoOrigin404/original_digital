@@ -34,6 +34,7 @@ interface MovieType {
 
 interface MoviesProps {
   movie: MovieType;
+  onClick?: (movie: MovieType) => void;
 }
 
 interface UserData {
