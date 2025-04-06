@@ -102,3 +102,25 @@
     }
   }
 }
+
+.modal-overlay {
+  .modal {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    button {
+      display: flex;
+      justify-content: flex-end;
+      background: transparent;
+      border-radius: 50%;
+      padding: 1rem;
+      color: white;
+    }
+  }
+  .modal-content {
+    display: flex;
+  }
+  iframe {
+    border: none;
+  }
+}

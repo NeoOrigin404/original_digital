@@ -74,7 +74,8 @@ export default function MovieDetail() {
             </button>
             <div className="modal-content">
               <iframe
-                className="movie-trailer"
+                width="100%"
+                height="350px"
                 src={movieId.trailer}
                 title="Trailer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
