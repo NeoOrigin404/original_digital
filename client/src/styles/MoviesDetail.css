@@ -1,105 +1,140 @@
-h1 {
-  text-align: center;
-}
-
-.movie-titleDetail {
-  transform: translateY(-7.5rem);
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
-  font-size: 32px;
-}
-
-.landscape {
-  border-radius: 6px;
-  height: auto;
-  width: 100%;
-}
-
-.container-movies {
-  transform: translateY(-3.5rem);
-  display: flex;
-  flex-direction: column;
-}
-.information-left {
-  font-size: 14px;
-}
-.bio {
-  font-size: 16px;
-}
-.information-right {
-  font-size: 14px;
-}
-
-.short-movie {
-  margin: 1rem 0;
-  border-radius: 6px;
-}
-
-.container-movies button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  top: 1rem;
-}
-
-details summary {
-  list-style: none;
-}
-
-@media only screen and (min-width: 1200px) {
-  .movie-titleDetail {
-    font-size: 56px;
-    transform: translateY(-28rem);
-  }
-  .landscape {
-    border-radius: 10px;
-    filter: brightness(70%);
-  }
-  .container-movies {
-    transform: translateY(-16rem);
-    .information-wrap {
-      display: flex;
-      flex-direction: wrap;
-      justify-content: space-between;
-      padding-left: 1rem;
-      padding-right: 1rem;
+.movie-details {
+  .movie-header {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    border-radius: 10px 10px 0 0;
+    h2 {
+      font-size: 3rem;
       color: white;
-      margin-bottom: 7rem;
+      text-align: center;
     }
-  }
-  .information-right {
-    max-width: 20vw;
     p {
+      color: white;
       margin-bottom: 1rem;
-      border: 1px solid white;
-      padding: 0.3rem;
-      font-size: 12px;
+    }
+    .content-details {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      .badge-4k {
+        content: url(https://tv.apple.com/assets/badges/MetadataBadge%204K%20OnDark-c90195dae0171c69694b4d7386421ad8.svg);
+      }
+      .dolby-vision {
+        content: url(https://tv.apple.com/assets/badges/MetadataBadge%20Dolby%20OnDark-2c6afeb5b02b2c48655606bd9d178bfd.svg);
+      }
+      .dolby-atmos {
+        content: url(https://tv.apple.com/assets/badges/MetadataBadge%20Atmos%20OnDark-007278edac4076aaf1bc01dedf68e3cd.svg);
+      }
+      .cc {
+        content: url(https://tv.apple.com/assets/badges/MetadataBadge%20CC%20OnDark-7b5b00df263bfee5af843510f708c307.svg);
+      }
+      .ad {
+        content: url(https://tv.apple.com/assets/badges/MetadataBadge%20AD%20OnDark-4731d380509cdd9c3e59e73cb9dc09d5.svg);
+      }
+      .sdh {
+        content: url(https://tv.apple.com/assets/badges/MetadataBadge%20SDH%20OnDark-45f29ce5e07128bf67d924a31a003cf3.svg);
+      }
     }
   }
-  .information-left {
+  .movie-footer {
+    background-color: rgb(239, 239, 239);
+    .button-content {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: -5px;
+    }
+    button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      width: 100%;
+      background-color: #575aef;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 5px;
+      span {
+        width: 18px;
+        height: 18px;
+        content: url(/public/play_button.png);
+      }
+    }
+  }
+  .production-content {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
     p {
+      font-size: 14px;
+    }
+    p:first-of-type {
       margin-bottom: 1rem;
-      border: 1px solid white;
-      padding: 0.3rem;
-      font-size: 12px;
     }
   }
-  .favorite-button {
-    color: white;
+  .trailer-content {
+    margin-bottom: 1rem;
+    span {
+      position: relative;
+      border: 3px solid #575aef;
+      display: block;
+      max-width: 100px;
+      bottom: 5px;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    iframe {
+      border: none;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      span {
+        bottom: 0px;
+      }
+    }
   }
-  .favorite-button:hover {
-    color: black;
+}
+
+.modal-overlay {
+  .modal {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    button {
+      display: flex;
+      justify-content: flex-end;
+      background: transparent;
+      border-radius: 50%;
+      padding: 1rem;
+      color: white;
+    }
   }
-  .short-movie {
-    width: 45%;
-    height: 250px;
-    margin: 0 auto;
-    border-radius: 10px;
+  .modal-content {
+    display: flex;
   }
-  .same-genre {
-    margin-top: 4rem;
-    font-size: 16px;
-    color: rgb(102, 102, 102);
+  iframe {
+    border: none;
+  }
+}
+
+@media only screen and (min-width: 792px) {
+  .movie-details {
+    .movie-header {
+      align-items: flex-start;
+      padding-left: 3rem;
+    }
+  }
+  .movie-footer {
+    .button-content {
+      width: 360px;
+    }
   }
 }
