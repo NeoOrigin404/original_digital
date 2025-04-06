@@ -28,6 +28,15 @@ export default function MovieDetail() {
     setIsModalOpen(false);
   };
 
+  const formatDuration = (timeSql: string): string => {
+    const [splitHours, splitMinutes] = timeSql.split(":");
+    const hours = Number.parseInt(splitHours, 10);
+    const minutes = Number.parseInt(splitMinutes, 10);
+
+    if (hours === 0) return `${minutes}min`;
+    return `${hours}h${minutes.toString().padStart(2, "0")}min`;
+  };
+
   return (
     <section className="movie-details">
       <div
@@ -38,7 +47,8 @@ export default function MovieDetail() {
       >
         <h2>{movieId.title}</h2>
         <p>
-          {movieId.genres} . {movieId.duration} . {movieId.release_year}
+          {movieId.genres} . {formatDuration(movieId.duration)} .{" "}
+          {movieId.release_year}
         </p>
         <div className="content-details">
           <span className="badge-4k" aria-label="4K" role="img" />
