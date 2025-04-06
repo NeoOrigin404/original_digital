@@ -43,6 +43,13 @@
 .show-movies h2 {
   margin-top: 1rem;
   font-size: 18px;
+  span {
+    position: relative;
+    border: 3px solid #575aef;
+    display: block;
+    max-width: 70px;
+    bottom: 2px;
+  }
 }
 
 .show-movies h2:first-of-type {

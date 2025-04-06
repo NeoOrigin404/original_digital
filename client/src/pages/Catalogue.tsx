@@ -52,27 +52,27 @@ export default function Catalogue() {
         )}
       </div>
       <div className="show-movies">
-        <h2>Films gratuits</h2>
+        <h2>
+          Films gratuits <span />
+        </h2>
         <section className="movie-container">
           {freeMovies.map((movie) => (
             <MovieCards key={movie.id} movie={movie} />
           ))}
         </section>
-        <h2>Tendances Actuelles</h2>
+        <h2>
+          Tendances Actuelles <span />
+        </h2>
         <section className="movie-container">
           {sfMovies.map((movie) => (
             <MovieCards key={movie.id} movie={movie} />
           ))}
         </section>
-        <h2>Films Premium</h2>
+        <h2>
+          Films Premium <span />
+        </h2>
         <section className="movie-container">
           {premiumMovies.map((movie) => (
-            <MovieCards key={movie.id} movie={movie} />
-          ))}
-        </section>
-        <h2>Ma Liste</h2>
-        <section className="movie-container">
-          {movies.map((movie) => (
             <MovieCards key={movie.id} movie={movie} />
           ))}
         </section>
