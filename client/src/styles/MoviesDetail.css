@@ -124,3 +124,17 @@
     border: none;
   }
 }
+
+@media only screen and (min-width: 792px) {
+  .movie-details {
+    .movie-header {
+      align-items: flex-start;
+      padding-left: 3rem;
+    }
+  }
+  .movie-footer {
+    .button-content {
+      width: 360px;
+    }
+  }
+}
