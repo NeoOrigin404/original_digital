@@ -86,20 +86,22 @@ export default function MovieDetail() {
       )}
 
       <div className="trailer-content">
-        <h2>Bande-annonces</h2>
+        <h2>
+          Bande-annonces <span />
+        </h2>
         <iframe
-          className="short-movie"
           width="100%"
-          height="auto"
+          height="350px"
           src={movieId.trailer}
           title="YouTube video player"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
+        <h3>
+          Vous pourriez aimer aussi... <span />
+        </h3>
       </div>
-      <h3 className="same-genre">Vous pourriez aimer aussi...</h3>
       <section className="movie-container">
         {sameGenre.map((movie) => (
           <MovieCards key={movie.id} movie={movie} />

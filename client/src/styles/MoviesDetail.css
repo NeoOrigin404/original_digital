@@ -79,4 +79,26 @@
       margin-bottom: 1rem;
     }
   }
+  .trailer-content {
+    margin-bottom: 1rem;
+    span {
+      position: relative;
+      border: 3px solid #575aef;
+      display: block;
+      max-width: 100px;
+      bottom: 5px;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    iframe {
+      border: none;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      span {
+        bottom: 0px;
+      }
+    }
+  }
 }
