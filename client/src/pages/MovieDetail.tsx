@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import "../styles/MoviesDetail.css";
-import FavoriteButton from "../components/FavoriteButton";
 import MovieCards from "../components/MovieCards";
+import { useState } from "react";
 
 export default function MovieDetail() {
   const movieData = useLoaderData() as {
@@ -18,15 +18,25 @@ export default function MovieDetail() {
     )
     .slice(0, 12);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <section className="movie-details">
       <div
-        className="details"
+        className="movie-header"
         style={{
           backgroundImage: `linear-gradient(rgba(11, 11, 11, 0.2), rgba(11, 11, 11, 0.2)), url(${movieId.landscape_image})`,
         }}
       >
-        <h2 className="movie-titleDetail">{movieId.title}</h2>
+        <h2>{movieId.title}</h2>
         <p>
           {movieId.genres} . {movieId.duration} . {movieId.release_year}
         </p>
@@ -43,17 +53,52 @@ export default function MovieDetail() {
           />
         </div>
       </div>
-      <iframe
-        className="short-movie"
-        width="100%"
-        height="auto"
-        src={movieId.trailer}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      />
+      <div className="movie-footer">
+        <div className="button-content">
+          <button type="button" onClick={handleOpenModal}>
+            <span aria-label="Logo player" role="img" />
+            LECTURE
+          </button>
+        </div>
+        <div className="production-content">
+          <p>{movieId.synopsis}</p>
+          <p>Avec : {movieId.casting}</p>
+          <p>Production : {movieId.production}</p>
+        </div>
+      </div>
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <button type="button" onClick={handleCloseModal}>
+              X
+            </button>
+            <div className="modal-content">
+              <iframe
+                className="movie-trailer"
+                src={movieId.trailer}
+                title="Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="trailer-content">
+        <h2>Bande-annonces</h2>
+        <iframe
+          className="short-movie"
+          width="100%"
+          height="auto"
+          src={movieId.trailer}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
       <h3 className="same-genre">Vous pourriez aimer aussi...</h3>
       <section className="movie-container">
         {sameGenre.map((movie) => (
