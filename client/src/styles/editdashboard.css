@@ -44,7 +44,7 @@
 }
 
 .movie-edit {
-  border: solid 2px #c2e812;
+  border: solid 2px rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: space-between;
   align-items: center;
