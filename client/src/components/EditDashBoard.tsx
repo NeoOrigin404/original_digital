@@ -165,7 +165,7 @@ export default function EditDashBoard() {
           onClick={(e) => e.stopPropagation()}
           tabIndex={-1}
           onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
+            if (e.key === "Enter") {
               e.preventDefault();
               e.stopPropagation();
             }
