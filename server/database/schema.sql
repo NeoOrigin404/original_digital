@@ -1,9 +1,9 @@
 create table user (
-  id int unsigned primary key auto_increment not null,
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
-  email varchar(255) not null unique,
-  hashed_password varchar(50) not null,
+  email varchar(255) NOT NULL UNIQUE,
+  hashed_password varchar(50) NOT NULL,
   subscription BOOLEAN DEFAULT 0,
   role VARCHAR(50) NOT NULL DEFAULT 'utilisateur'
 );
