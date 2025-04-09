@@ -3,7 +3,7 @@ create table user (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   email varchar(255) not null unique,
-  hashed_password varchar(255) not null,
+  hashed_password varchar(50) not null,
   subscription BOOLEAN DEFAULT 0,
   role VARCHAR(50) NOT NULL DEFAULT 'utilisateur'
 );
