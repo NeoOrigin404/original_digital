@@ -31,9 +31,7 @@ class UserRepository {
   }
 
   async readAll() {
-    const [rows] = await databaseClient.query<Rows>(
-      "SELECT *, first_name, last_name FROM user",
-    );
+    const [rows] = await databaseClient.query<Rows>("SELECT * FROM user");
     return rows as User[];
   }
 
