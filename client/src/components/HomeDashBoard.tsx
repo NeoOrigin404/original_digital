@@ -8,7 +8,7 @@ export default function HomeDashBoard() {
     <>
       {movies.map((movie) => (
         <div className="dashboard-movies" key={movie.id}>
-          <img src={movie.poster} alt="" />
+          <img src={movie.poster} alt={movie.title} />
           <p>{movie.title}</p>
         </div>
       ))}
