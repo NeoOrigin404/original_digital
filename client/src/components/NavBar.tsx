@@ -51,8 +51,21 @@ export default function NavBar() {
   return (
     <nav>
       <div className="title">
-        <Link to="/" onClick={closeMenu}>
-          <img src="/Logo_OriginalDigital.webp" alt="logo" className="logo" />
+        <Link
+          to={
+            role === "anonymous"
+              ? "/"
+              : role === "utilisateur"
+                ? "/catalogue"
+                : "/dashboard"
+          }
+          onClick={closeMenu}
+        >
+          <img
+            src="/Logo_OriginalDigital.webp"
+            alt="Logo Original Digital"
+            className="logo"
+          />
         </Link>
       </div>
 
