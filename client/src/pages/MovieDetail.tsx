@@ -13,9 +13,12 @@ export default function MovieDetail() {
   const movies = movieData.movies;
 
   const sameGenre = movies
-    .filter((movie) =>
-      movie.genres.split(",").some((genre) => movieId.genres.includes(genre)),
-    )
+    .filter((movie) => {
+      if (!movie?.genres || !movieId?.genres) return false;
+      return movie.genres
+        .split(",")
+        .some((genre) => movieId.genres.includes(genre));
+    })
     .slice(0, 12);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,6 +32,7 @@ export default function MovieDetail() {
   };
 
   const formatDuration = (timeSql: string): string => {
+    if (!timeSql) return "";
     const [splitHours, splitMinutes] = timeSql.split(":");
     const hours = Number.parseInt(splitHours, 10);
     const minutes = Number.parseInt(splitMinutes, 10);
@@ -42,13 +46,13 @@ export default function MovieDetail() {
       <div
         className="movie-header"
         style={{
-          backgroundImage: `linear-gradient(rgba(11, 11, 11, 0.2), rgba(11, 11, 11, 0.2)), url(${movieId.landscape_image})`,
+          backgroundImage: `linear-gradient(rgba(11, 11, 11, 0.2), rgba(11, 11, 11, 0.2)), url(${movieId?.landscape_image || ""})`,
         }}
       >
-        <h2>{movieId.title}</h2>
+        <h2>{movieId?.title}</h2>
         <p>
-          {movieId.genres} . {formatDuration(movieId.duration)} .{" "}
-          {movieId.release_year}
+          {movieId?.genres} . {formatDuration(movieId?.duration)} .{" "}
+          {movieId?.release_year}
         </p>
         <div className="content-details">
           <span className="badge-4k" aria-label="4K" role="img" />
@@ -71,9 +75,9 @@ export default function MovieDetail() {
           </button>
         </div>
         <div className="production-content">
-          <p>{movieId.synopsis}</p>
-          <p>Avec : {movieId.casting}</p>
-          <p>Production : {movieId.production}</p>
+          <p>{movieId?.synopsis}</p>
+          <p>Avec : {movieId?.casting}</p>
+          <p>Production : {movieId?.production}</p>
         </div>
       </div>
       {isModalOpen && (
@@ -86,7 +90,7 @@ export default function MovieDetail() {
               <iframe
                 width="100%"
                 height="350px"
-                src={movieId.trailer}
+                src={movieId?.trailer || ""}
                 title="Trailer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -103,7 +107,7 @@ export default function MovieDetail() {
         <iframe
           width="100%"
           height="350px"
-          src={movieId.trailer}
+          src={movieId?.trailer || ""}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"

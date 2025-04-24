@@ -100,9 +100,17 @@ const getAuthorizationForUsersOrAdmin = () => {
     .get(`${API}/api/checkAdminOrUser`, {
       withCredentials: true,
     })
-    .then((response) => response)
+    .then((response) => {
+      if (response.status === 200) {
+        return response;
+      }
+      throw new Error("Accès non autorisé");
+    })
     .catch((error) => {
-      throw new Error(error);
+      if (error.response && error.response.status === 403) {
+        throw new Error("Accès non autorisé");
+      }
+      throw error;
     });
 };
 

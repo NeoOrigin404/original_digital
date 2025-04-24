@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/formdashboard.css";
 import joi from "joi";
 
 export default function FormDashBoard() {
+  const navigate = useNavigate();
   const [newMovie, setNewMovie] = useState({
     title: "",
     poster: "",
@@ -25,6 +27,7 @@ export default function FormDashBoard() {
       })
       .then((response) => {
         if (response.status === 201) {
+          navigate("/dashboard");
         } else {
           alert(response.data.error);
         }

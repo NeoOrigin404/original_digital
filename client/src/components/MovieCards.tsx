@@ -10,7 +10,8 @@ export default function MovieCards({ movie, onClick }: MoviesProps) {
   };
   const { role, subscription } = useAuth();
 
-  const isPremiumLocked = movie.premium && role !== "admin" && !subscription;
+  const isPremiumLocked =
+    movie.premium && role !== "administrateur" && !subscription;
 
   const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
@@ -23,9 +24,13 @@ export default function MovieCards({ movie, onClick }: MoviesProps) {
 
   let linkDestination = "/";
 
-  if (role === "anonymous") linkDestination = "/signup";
-  else if (isPremiumLocked) linkDestination = "/payment";
-  else linkDestination = `/movies/${movie.id}`;
+  if (role === "anonymous") {
+    linkDestination = "/signup";
+  } else if (isPremiumLocked) {
+    linkDestination = "/payment";
+  } else {
+    linkDestination = `/movies/${movie.id}`;
+  }
 
   return (
     <div className="card-movie-img">

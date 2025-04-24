@@ -18,11 +18,10 @@ export default function Catalogue() {
 
   const [selectedOffer, setSelectedOffer] = useState("free");
 
-  const freeMovies = movies.filter((movie) => !movie.premium);
-  const premiumMovies = movies.filter((movie) => movie.premium);
-  const sfMovies = movies.filter((movie) =>
-    movie.genres.includes("Science-fiction"),
-  );
+  const freeMovies = movies?.filter((movie) => !movie?.premium) || [];
+  const premiumMovies = movies?.filter((movie) => movie?.premium) || [];
+  const sfMovies =
+    movies?.filter((movie) => movie?.genres?.includes("Science-fiction")) || [];
 
   const handleScroll = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
