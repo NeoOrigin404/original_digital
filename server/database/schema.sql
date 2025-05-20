@@ -141,7 +141,7 @@ VALUES
   ("Inside", "Mel est transféré d'un établissement pour mineurs à une prison pour adultes et se voit pris sous l'aile de Mark, le criminel le plus détesté d’Australie, et de Warren, un détenu bientôt libéré sous condition. Le triangle amoureux parental qui se forme entre eux devient leur perte.", "2025", "1:44:00", "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/fNblwtRfaeIlLlM5kFrgUZYpE0a.jpg", "https://www.youtube.com/embed/ssvoAQELA3U?si=C2_YoUjsQUQjsVGs", "Guy Pearce, Vincent Miller, Cosmo Jarvis, Tammy Macintosh", "Charles Williams", "https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/fCUMcvj9FzkiWJi3uyYiUPTlmKo.jpg",true); 
 
 
-insert into user ( first_name, last_name, email, hashed_password, subscription, role)
+INSERT INTO user ( first_name, last_name, email, hashed_password, subscription, role)
 VALUES
 ("Brayan", "Fagete", "adminod@gmail.com","$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", 1, "administrateur"),
 ("Alex", "Taranne", "wild@gmail.com", "$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", 0, "utilisateur" );
