@@ -1,4 +1,4 @@
-create table user (
+CREATE TABLE user (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
@@ -8,7 +8,7 @@ create table user (
   role VARCHAR(50) NOT NULL DEFAULT 'utilisateur'
 );
 
-create table movie (
+CREATE TABLE movie (
   id int unsigned primary key auto_increment not null,
   title VARCHAR(255) not null,
   synopsis TEXT not null,
@@ -22,17 +22,17 @@ create table movie (
   premium BOOLEAN DEFAULT TRUE
 );
 
-create table genre (
+CREATE TABLE genre (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 name VARCHAR(255) NOT NULL
 );
 
-create table movie_genre (
+CREATE TABLE movie_genre (
 movie_id INT NOT NULL,
 genre_id INT NOT NULL
 );
 
-create table watchlist (
+CREATE TABLE watchlist (
 movie_id int not null,
 user_id int not null
 );
