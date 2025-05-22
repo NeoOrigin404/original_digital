@@ -16,9 +16,12 @@ export default function HomePage() {
           votre adresse e-mail pour nous rejoindre.
         </p>
         <div className="input-mail">
-          <img src="/image-homepage.png" alt="" />
+          <img
+            src="/image-homepage.png"
+            alt="People eating pop corn in theater in cartoon style"
+          />
         </div>
-        <img src="/arrow-down.png" alt="" className="arrow" />
+        <img src="/arrow-down.png" alt="Arrow down" className="arrow" />
         <h2>Tendances Actuelles</h2>
         <section className="movie-container">
           {freeMovies.map((movie) => (
