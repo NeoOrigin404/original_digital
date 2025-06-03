@@ -171,6 +171,11 @@ export default function SignupForm() {
                   path={showIconPassword.path}
                   height={showIconPassword.height}
                   width={showIconPassword.width}
+                  aria-label={
+                    showIconPassword
+                      ? "Masquer le mot de passe"
+                      : "Afficher le mot de pase"
+                  }
                 />
                 <span className="tooltip">
                   {showPassword
@@ -207,8 +212,13 @@ export default function SignupForm() {
                   path={showIconConfirmPassword.path}
                   height={showIconConfirmPassword.height}
                   width={showIconConfirmPassword.width}
+                  aria-label={
+                    showIconPassword
+                      ? "Masquer le mot de passe"
+                      : "Afficher le mot de pase"
+                  }
                 />
-                <span className="tooltip">
+                <span className="tooltip" aria-hidden="true">
                   {showPassword
                     ? "Masquer le mot de passe"
                     : "Afficher le mot de passe"}
@@ -241,6 +251,7 @@ export default function SignupForm() {
               pauseOnHover
               theme="light"
               transition={Bounce}
+              aria-live="polite"
             />
           </div>
         </form>
