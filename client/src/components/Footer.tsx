@@ -25,7 +25,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Test de vitesse
+                Test de débit
               </Link>
             </li>
           </ul>
