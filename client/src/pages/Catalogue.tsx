@@ -78,7 +78,7 @@ export default function Catalogue() {
       </div>
       {!subscription && (
         <section id="acces" className="middle-element">
-          <h2>Nos différentes souscriptions</h2>
+          <h2>Nos souscriptions</h2>
           <div className="offer">
             <button
               type="button"
